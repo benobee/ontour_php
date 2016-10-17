@@ -1,0 +1,52 @@
+application: evident-league-622
+version: 1
+runtime: php55
+api_version: 1
+threadsafe: yes
+
+instance_class: F2
+
+handlers:
+  
+- url: /favicon\.ico
+  static_files: favicon.ico
+  upload: favicon\.ico
+  secure: optional
+  
+- url: /(.+\.(gif|png|jpg))$
+  static_files: \1
+  upload: .+\.(gif|png|jpg)$
+  application_readable: true
+  
+- url: /fonts
+  static_dir: fonts
+  
+- url: /([^/]+\.php)
+  script: \1
+  
+- url: /(.+\.php)
+  script: \1
+  
+- url: /css
+  static_dir: css
+
+- url: /js
+  static_dir: js
+  
+- url: /proven-signal-627.appspot.com/
+  static_dir: proven-signal-627.appspot.com
+  
+- url: /extra/lightbox2
+  static_dir: extra/lightbox2
+
+- url: /docs/js
+  static_dir: docs/js
+  
+- url: /.*
+  script: home.php
+  
+
+
+  
+  
+  
